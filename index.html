@@ -103,6 +103,25 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 .forum-body a{display:inline-block;margin-top:.55rem;color:var(--accent);text-decoration:underline;text-underline-offset:.2em;font-size:.87rem}
 .forum-contact{margin-top:1.15rem}
 @media(max-width:730px){.forum-heading{grid-template-columns:1fr}}
+.quiet-link{display:inline-flex;margin:.65rem 0 .65rem .85rem;font-size:.88rem;color:var(--soft);text-decoration:underline;text-underline-offset:.25em}
+.section-heading>p{color:var(--soft);margin-top:.7rem;max-width:52ch}
+.workstreams li{display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;padding:clamp(1.25rem,4vw,2rem)}
+.workstreams li>a{margin-top:auto;padding-top:.7rem;text-underline-offset:.2em}
+.workstreams .eyebrow{border:1px solid #b9916955;border-radius:2rem;padding:.25rem .65rem;margin-bottom:.25rem}
+.workstreams .eyebrow+p{margin:0}
+.archive-item{border-top:2px solid transparent;transition:border-color .2s,background-color .2s}
+.archive-item:hover,.archive-item:focus-within{border-top-color:var(--accent)}
+.contact{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:1.5rem 3rem;align-items:center;padding:clamp(1.15rem,4.5vw,3rem);border:1px solid #a67d5955;background:linear-gradient(120deg,#31271f,#1d1d1b 72%)}
+.contact p{color:var(--soft);margin-top:.65rem}
+.email-line,.contact-social{display:flex;gap:.65rem 1rem;align-items:center;flex-wrap:wrap}
+.email-line>a{overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:.24rem}
+.contact .button{background:transparent;color:var(--ink);cursor:pointer;font:inherit;font-size:.8rem}
+.contact .button[hidden]{display:none}
+.contact-social{border-top:1px solid var(--line);padding-top:.75rem;margin-top:.85rem}
+.contact-social a{font-size:.88rem;color:var(--accent)}
+#email-status:empty{display:none}
+@media(max-width:720px){.contact{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.archive-item{transition:none}}
 </style>
 </head>
 <body id="inicio"><a class="skip" href="#contenido">Saltar al contenido</a><div class="shell">
@@ -114,7 +133,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 <h1 id="nombre">Daniel <em>Hincapie</em></h1>
 <p class="role">Desarrollador Full Stack</p>
 <p class="hero-summary">Fundador de Bruma y estudiante de Ingeniería de Sistemas.</p>
-<a class="button" href="#proyectos">Ver proyectos <span aria-hidden="true">↓</span></a>
+<a class="button" href="#proyectos">Ver proyectos <span aria-hidden="true">↓</span></a> <a class="quiet-link" href="#perfiles">Contactarme ↗</a>
 </div>
 <aside class="work-index" aria-labelledby="work-index-title">
 <h2 id="work-index-title">Trabajo destacado</h2>
@@ -152,7 +171,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 </div>
 </section>
 <section id="proyectos" class="content" aria-labelledby="proyectos-titulo">
-<div class="section-heading"><h2 id="proyectos-titulo">Proyectos y colaboraciones</h2></div>
+<div class="section-heading"><h2 id="proyectos-titulo">Proyectos y colaboraciones</h2><p>Software que he impulsado desde Bruma y trabajo en el que he colaborado.</p></div>
 <article class="project" aria-labelledby="bruma-titulo">
 <div>
 <p class="eyebrow">Fundador</p>
@@ -247,16 +266,38 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 </div>
 <a class="button forum-contact" href="https://www.instagram.com/hincapie__18_/">Enviar un aporte por Instagram <span aria-hidden="true">↗</span></a>
 </section>
-<section id="perfiles" class="content profile-links" aria-label="Contacto y redes sociales">
-<span class="link-label">Contacto y redes sociales</span>
-<a href="mailto:hincapie18daniel@gmail.com">hincapie18daniel@gmail.com</a>
-<a href="https://github.com/MiliCorpp">GitHub ↗</a>
-<a href="https://www.instagram.com/hincapie__18_/">Instagram ↗</a>
-<a href="https://vsco.co/hincapiee18/gallery">VSCO ↗</a>
+<section id="perfiles" class="content contact" aria-labelledby="contacto-titulo">
+<div>
+<h2 id="contacto-titulo">Hablemos</h2>
+<p>Para conversar sobre un proyecto o una colaboración, escríbeme.</p>
+</div>
+<div class="contact-options">
+<div class="email-line"><a href="mailto:hincapie18daniel@gmail.com">hincapie18daniel@gmail.com</a><button id="copy-email" class="button" type="button" hidden>Copiar</button></div>
+<div class="contact-social" aria-label="Perfiles personales"><a href="https://github.com/MiliCorpp">GitHub ↗</a><a href="https://www.instagram.com/hincapie__18_/">Instagram ↗</a><a href="https://vsco.co/hincapiee18/gallery">VSCO ↗</a></div>
+<p id="email-status" role="status"></p>
+</div>
 </section>
 </main>
 <footer><span>Daniel Hincapie</span><a href="#inicio">Volver arriba ↑</a></footer>
-</div></body></html>
+</div><script>
+const copyEmail = document.getElementById('copy-email');
+const emailLink = document.querySelector('.email-line a');
+const emailStatus = document.getElementById('email-status');
+
+if (navigator.clipboard && window.isSecureContext) {
+  copyEmail.hidden = false;
+  copyEmail.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(emailLink.textContent.trim());
+      emailStatus.textContent = 'Correo copiado.';
+    } catch {
+      emailStatus.textContent = 'Puedes seleccionar y copiar la dirección directamente.';
+    }
+  });
+}
+</script>
+</body></html>
+
 
 
 
