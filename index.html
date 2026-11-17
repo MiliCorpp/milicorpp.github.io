@@ -134,6 +134,20 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 .case-actions .quiet-link{margin:0}
 .case-next{margin-top:1rem;font-size:.92rem}
 @media(max-width:720px){.case-heading,.case-grid,.case-demo{grid-template-columns:1fr}}
+.cv-link{margin-top:.9rem}
+.portfolio-detail{background:#211f1b;border:1px solid var(--line)}
+#caso-luzan{margin-top:.65rem}
+.portfolio-detail summary{padding:.7rem .9rem;color:var(--accent);cursor:pointer;font-weight:600}
+.portfolio-detail summary:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.detail-body{padding:0 .9rem .9rem;color:var(--soft)}
+.detail-body p+p,.detail-body code+p{margin-top:.45rem}
+.detail-body h4,.mili-demo h4{margin:.35rem 0}
+.case-flow{display:flex;gap:.7rem 2rem;flex-wrap:wrap;padding-left:1.3rem}
+.mili-demo{border-top:1px solid var(--line);margin-top:1.4rem;padding-top:1rem}
+.mili-input,.detail-body pre{overflow:auto;margin:.65rem 0;color:var(--ink)}
+.mili-input{background:#141513;padding:.7rem .9rem}
+.mili-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+@media(max-width:720px){.mili-steps{grid-template-columns:1fr}}
 </style>
 </head>
 <body id="inicio"><a class="skip" href="#contenido">Saltar al contenido</a><div class="shell">
@@ -168,7 +182,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 </section>
 <section id="formacion" class="content about" aria-labelledby="formacion-titulo">
 <div><h2 id="formacion-titulo">Formación</h2></div>
-<div class="intro"><p>Actualmente estudio Ingeniería de Sistemas y complemento la carrera con cursos de Google en ciberseguridad y Python.</p></div>
+<div class="intro"><p>Actualmente estudio Ingeniería de Sistemas y complemento la carrera con cursos de Google en ciberseguridad y Python.</p><a class="button cv-link" href="data:text/html;charset=utf-8;base64,PCFkb2N0eXBlIGh0bWw+CjxodG1sIGxhbmc9ImVzIj48bWV0YSBjaGFyc2V0PSJ1dGYtOCI+PG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCxpbml0aWFsLXNjYWxlPTEiPjx0aXRsZT5DViB8IERhbmllbCBIaW5jYXBpZTwvdGl0bGU+CjxzdHlsZT5AcGFnZXtzaXplOkE0O21hcmdpbjoxN21tfWJvZHl7Zm9udDoxNXB4LzEuNSBzeXN0ZW0tdWk7Y29sb3I6IzIwMjMyOTtiYWNrZ3JvdW5kOndoaXRlO21heC13aWR0aDo3NjBweDttYXJnaW46MnJlbSBhdXRvO3BhZGRpbmc6MCAxcmVtfWgxe2ZvbnQtc2l6ZToyLjVyZW07bWFyZ2luOjB9aDJ7Zm9udC1zaXplOjEuMDVyZW07Ym9yZGVyLWJvdHRvbToxcHggc29saWQgI2I4YmZjYTttYXJnaW46MS40cmVtIDAgLjRyZW07cGFkZGluZy1ib3R0b206LjNyZW19cHttYXJnaW46LjQ1cmVtIDB9YXtjb2xvcjojMjE0NzZhO292ZXJmbG93LXdyYXA6YW55d2hlcmV9QG1lZGlhIHByaW50e2JvZHl7bWFyZ2luOjA7cGFkZGluZzowO2ZvbnQtc2l6ZToxMXB0fX08L3N0eWxlPgo8bWFpbj48aDE+RGFuaWVsIEhpbmNhcGllPC9oMT48cD48c3Ryb25nPkRlc2Fycm9sbGFkb3IgRnVsbCBTdGFjayDCtyBGdW5kYWRvciBkZSBCcnVtYTwvc3Ryb25nPjwvcD48cD5CdWNhcmFtYW5nYSwgQ29sb21iaWEgwrcgPGEgaHJlZj0ibWFpbHRvOmhpbmNhcGllMThkYW5pZWxAZ21haWwuY29tIj5oaW5jYXBpZTE4ZGFuaWVsQGdtYWlsLmNvbTwvYT48L3A+PHA+PGEgaHJlZj0iaHR0cHM6Ly9kYW5pZWxoaW5jYXBpZS5pc3Jvb3QuaW4vIj5Qb3J0YWZvbGlvPC9hPiDCtyA8YSBocmVmPSJodHRwczovL2dpdGh1Yi5jb20vTWlsaUNvcnBwIj5HaXRIdWI8L2E+PC9wPgo8aDI+UGVyZmlsPC9oMj48cD5Fc3R1ZGlhbnRlIGRlIEluZ2VuaWVyw61hIGRlIFNpc3RlbWFzIGludGVyZXNhZG8gZW4gZWwgZGlzZcOxbyB5IGRlc2Fycm9sbG8gZGUgYXBsaWNhY2lvbmVzIHdlYiwgZGVzZGUgbGEgaW50ZXJmYXogaGFzdGEgbGEgbMOzZ2ljYSBkZSBsYSBhcGxpY2FjacOzbi48L3A+CjxoMj5Qcm95ZWN0b3MgeSBjb2xhYm9yYWNpb25lczwvaDI+PHA+PHN0cm9uZz5CcnVtYSDCtyBGdW5kYWRvci48L3N0cm9uZz4gRXhwbG9ybyBzb2x1Y2lvbmVzIHBhcmEgZWwgcmVwYXJ0byBkZSBnYXN0b3MgZGVsIGhvZ2FyIHkgbGEgcHJlc2VudGFjacOzbiBkZSBwcm9kdWN0b3MgZGUgY29tZXJjaW9zIGxvY2FsZXMuPC9wPgo8cD48c3Ryb25nPlBsb21lcsOtYSBMdXphbiDCtyBDb2xhYm9yYWNpw7NuIHdlYi48L3N0cm9uZz4gUmV2aXPDqSBlbCByZWNvcnJpZG8gZGUgY290aXphY2nDs24sIGFqdXN0w6kgdGV4dG9zIGVuIGVzcGHDsW9sIHkgYWNsYXLDqSBjw7NtbyBmdW5jaW9uYSBlbCBmb3JtdWxhcmlvIHF1ZSBwcmVwYXJhIGVsIG1lbnNhamUuPC9wPgo8cD48c3Ryb25nPk1pbGkgwrcgRGlzZcOxbyBkZSBsZW5ndWFqZS48L3N0cm9uZz4gRG9jdW1lbnTDqSB1bmEgc2ludGF4aXMgaW5pY2lhbCB5IHByb3B1c2UgbGEgYXJxdWl0ZWN0dXJhIGRlbCBjb21waWxhZG9yIE1JQy48L3A+CjxoMj5Gb3JtYWNpw7NuPC9oMj48cD48c3Ryb25nPkluZ2VuaWVyw61hIGRlIFNpc3RlbWFzPC9zdHJvbmc+IMK3IEVuIGN1cnNvPC9wPjxwPjxzdHJvbmc+Q3Vyc29zIGRlIEdvb2dsZTwvc3Ryb25nPiDCtyBDaWJlcnNlZ3VyaWRhZCB5IFB5dGhvbjwvcD4KPGgyPlRlY25vbG9nw61hczwvaDI+PHA+UHl0aG9uLCBKYXZhU2NyaXB0IHkgY29ub2NpbWllbnRvcyBiw6FzaWNvcyBkZSBDKysuPC9wPjwvbWFpbj48L2h0bWw+" download="Daniel-Hincapie-CV.html">Descargar CV <span aria-hidden="true">↓</span></a></div>
 <div class="archive-grid">
 <article class="archive-item" aria-labelledby="curso-ciberseguridad">
 <p class="eyebrow">Cursos de Google</p>
@@ -228,6 +242,15 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 <div><p class="eyebrow">Colaboración web</p><h3 id="luzan-titulo">Plomería Luzan</h3></div>
 <div><p>Trabajé en una página de servicios de plomería y revisé el recorrido de cotización. Ajusté los textos en español y aclaré cómo funciona el formulario que prepara el mensaje para el cliente. La revisión quedó publicada en una versión privada.</p></div>
 </article>
+<details id="caso-luzan" class="portfolio-detail">
+<summary>Ver el caso de Plomería Luzan</summary>
+<div class="detail-body">
+<h4>Una solicitud de cotización más clara</h4>
+<p>La persona que visita la página necesita entender qué servicio puede pedir y cómo iniciar la conversación. Revisé ese recorrido y ajusté los textos en español para explicar qué sucede al completar el formulario.</p>
+<ol class="case-flow"><li>Elegir el servicio</li><li>Describir la necesidad</li><li>Copiar el mensaje preparado</li></ol>
+<p>El ajuste explica que la página prepara el mensaje para que la persona lo copie y lo comparta por su cuenta. La revisión se publicó en una versión privada.</p>
+</div>
+</details>
 </section>
 <section id="ideas" class="content about" aria-labelledby="ideas-titulo">
 <div>
@@ -251,6 +274,20 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 <p class="eyebrow">Diseño técnico documentado</p>
 <h3 id="mili-lenguaje-titulo">Mili · Lenguaje de programación</h3>
 <p>Diseñé la sintaxis inicial de Mili y la arquitectura de su compilador, MIC. La guía técnica v1.0 reúne palabras reservadas, ejemplos de código y una propuesta de bibliotecas base. La guía deja planteado el paso de la especificación a un primer compilador.</p><ol class="compiler-stages" aria-label="Etapas propuestas para el compilador MIC"><li><strong>Lexer</strong><small>Reconoce los símbolos</small></li><li><strong>Parser</strong><small>Interpreta la sintaxis</small></li><li><strong>AST</strong><small>Representa la estructura</small></li></ol>
+<div id="demo-mili" class="mili-demo">
+<h4>De una expresión a su estructura</h4>
+<p>Ejemplo didáctico del diseño de MIC. Parte de una expresión aritmética para mostrar el análisis paso a paso.</p>
+<pre class="mili-input"><code>2 + 3 * 4</code></pre>
+<div class="mili-steps">
+<details class="portfolio-detail" open><summary>Lexer · Símbolos</summary><div class="detail-body"><code>NÚM(2)  +  NÚM(3)  *  NÚM(4)</code><p>El lexer reconoce los números y operadores por separado.</p></div></details>
+<details class="portfolio-detail"><summary>Parser · Precedencia</summary><div class="detail-body"><code>2 + (3 * 4)</code><p>El parser agrupa primero la multiplicación.</p></div></details>
+<details class="portfolio-detail"><summary>AST · Estructura</summary><div class="detail-body"><pre><code>Suma
+├─ 2
+└─ Multiplicación
+   ├─ 3
+   └─ 4</code></pre><p>El árbol sitúa la multiplicación como rama de la suma.</p></div></details>
+</div>
+</div>
 </article>
 <article class="archive-item" aria-labelledby="criptomoneda-titulo">
 <p class="eyebrow">Idea inicial</p>
