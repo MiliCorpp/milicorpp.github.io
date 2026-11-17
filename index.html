@@ -122,6 +122,18 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 #email-status:empty{display:none}
 @media(max-width:720px){.contact{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.archive-item{transition:none}}
+.case-study{margin:1rem 0;background:var(--panel);border:1px solid var(--line);padding:clamp(1.2rem,4vw,2.75rem);scroll-margin-top:1.5rem}
+.case-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:end;padding:0 0 1.25rem;margin-bottom:1.35rem}
+.case-heading h3{font-size:clamp(2.35rem,5vw,3.65rem)}
+.case-study p:not(.eyebrow){color:var(--soft)}
+.case-grid,.case-demo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem 2rem}
+.case-grid section{margin:0}
+.case-study h4{margin:0 0 .45rem;font-size:1.02rem;color:var(--ink)}
+.case-demo{margin-top:1.5rem;padding:1.15rem;background:#28241d;border:1px solid #a67d5955;align-items:center}
+.case-actions{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem}
+.case-actions .quiet-link{margin:0}
+.case-next{margin-top:1rem;font-size:.92rem}
+@media(max-width:720px){.case-heading,.case-grid,.case-demo{grid-template-columns:1fr}}
 </style>
 </head>
 <body id="inicio"><a class="skip" href="#contenido">Saltar al contenido</a><div class="shell">
@@ -177,7 +189,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 <p class="eyebrow">Fundador</p>
 <h3 id="bruma-titulo">Bruma</h3>
 <p>Bruma reúne dos proyectos de software. Uno ayuda a organizar gastos personales y compartidos. El otro explora cómo los negocios locales pueden mostrar sus productos y recibir solicitudes más claras.</p>
-<a class="button" href="https://www.bruma.click/">Visitar Bruma <span aria-hidden="true">↗</span></a>
+<a class="button" href="#caso-bruma">Leer caso de estudio <span aria-hidden="true">↓</span></a> <a class="quiet-link" href="https://www.bruma.click/">Visitar Bruma ↗</a>
 </div>
 <div class="project-sign"><img src="https://www.bruma.click/assets/bruma-logo.png" alt="Logo oficial de Bruma"></div>
 </article>
@@ -185,6 +197,33 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 <li><p class="eyebrow">En desarrollo</p><h3>Finanzas del Hogar</h3><p>Aplicación para registrar gastos, repartir cuentas y consultar cuánto queda por pagar.</p><a href="https://www.bruma.click/#demo-finanzas">Probar la demostración ↗</a></li>
 <li><p class="eyebrow">Demostración</p><h3>Comercio Local</h3><p>Catálogo de ejemplo que muestra cómo los negocios pueden presentar sus productos, precios y formatos.</p><a href="https://www.bruma.click/#ecosistema">Conocer Comercio Local ↗</a></li>
 </ul>
+<article id="caso-bruma" class="case-study" aria-labelledby="caso-bruma-titulo">
+<header class="case-heading">
+<div><p class="eyebrow">Caso de estudio</p><h3 id="caso-bruma-titulo">Cómo empecé a construir Bruma</h3></div>
+<p>Dos problemas cotidianos dieron forma al proyecto: aclarar las cuentas del hogar y ayudar a los comercios locales a presentar sus productos.</p>
+</header>
+<div class="case-grid">
+<section aria-labelledby="bruma-problema">
+<h4 id="bruma-problema">El problema</h4>
+<p>Cuando alguien adelanta el dinero del mercado, repartir el total es solo una parte. También hace falta saber quién ya pagó y cuánto queda pendiente. En el comercio local, otra pregunta es cómo presentar productos, precios y formatos antes de recibir una solicitud.</p>
+</section>
+<section aria-labelledby="bruma-aporte">
+<h4 id="bruma-aporte">Mi aporte como fundador</h4>
+<p>Definí dos recorridos para probar esas ideas. Para Finanzas del Hogar, planteé mostrar el saldo pendiente a medida que se registran los reembolsos. Para Comercio Local, partí de un catálogo de ejemplo para conversar con los negocios sobre cómo reciben y confirman pedidos.</p>
+</section>
+</div>
+<div class="case-demo">
+<div>
+<h4>Qué puedes probar hoy</h4>
+<p>En la demo de Finanzas del Hogar, elige cuánto costó el mercado, repártelo entre varias personas y marca los reembolsos. El saldo pendiente cambia con cada pago. En Comercio Local puedes explorar el catálogo de ejemplo.</p>
+</div>
+<div class="case-actions">
+<a class="button" href="https://www.bruma.click/#demo-finanzas">Probar el reparto de gastos ↗</a>
+<a class="quiet-link" href="https://www.bruma.click/#ecosistema">Explorar Comercio Local ↗</a>
+</div>
+</div>
+<p class="case-next"><strong>Qué falta validar</strong> · Cómo confirma un comercio una solicitud y qué necesita saber el cliente después. El catálogo sirve para explorar ese recorrido antes de desarrollar la gestión de pedidos.</p>
+</article>
 <article class="project contribution" aria-labelledby="luzan-titulo">
 <div><p class="eyebrow">Colaboración web</p><h3 id="luzan-titulo">Plomería Luzan</h3></div>
 <div><p>Trabajé en una página de servicios de plomería y revisé el recorrido de cotización. Ajusté los textos en español y aclaré cómo funciona el formulario que prepara el mensaje para el cliente. La revisión quedó publicada en una versión privada.</p></div>
